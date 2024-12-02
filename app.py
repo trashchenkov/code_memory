@@ -453,9 +453,9 @@ def handle_message(message):
                 bot.send_message(chat_id, "У вас пока нет созданных страниц памяти.")
         else:
             bot.send_message(chat_id, "Ошибка при запросе данных. Попробуйте позже.")
-    elif text in user_data[519525285]['pages']:
+    elif text in user_data[chat_id]['pages']:
         print(text)
-        res = get_memory_page_from_url(user_data[519525285]['pages'][text], user_data[519525285]['token'])
+        res = get_memory_page_from_url(user_data[chat_id]['pages'][text], user_data[chat_id]['token'])
         result = process_memory_page(res)
         print('!!!result:\n', result)
         if "error" in result:
